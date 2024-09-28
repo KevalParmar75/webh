@@ -30,7 +30,7 @@ function autoSlide() {
 }
 
 // Set interval for automatic sliding (every 3 seconds)
-let autoSlideInterval = setInterval(autoSlide, 3000); // 3000 milliseconds = 3 seconds
+let autoSlideInterval = setInterval(autoSlide, 3000);
 
 // Pause on hover
 const carousel = document.querySelector('.carousel');
@@ -39,12 +39,22 @@ carousel.addEventListener('mouseleave', () => {
     autoSlideInterval = setInterval(autoSlide, 3000);
 });
 
+// Keyboard navigation
+document.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowLeft") {
+        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+        showSlide(currentIndex);
+    } else if (event.key === "ArrowRight") {
+        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+        showSlide(currentIndex);
+    }
+});
+
 // Initial display
 showSlide(currentIndex);
 
-// script.js
-
-document.addEventListener('DOMContentLoaded', function() {
+// Reveal on scroll functionality
+document.addEventListener('DOMContentLoaded', function () {
     const reveals = document.querySelectorAll('.reveal');
 
     const revealOnScroll = () => {
@@ -65,7 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
     revealOnScroll(); // Call it once to check on load
 });
 
-document.querySelector('.hamburger-menu').addEventListener('click', function() {
+// Hamburger menu functionality
+document.querySelector('.hamburger-menu').addEventListener('click', function () {
     const sidePanel = document.getElementById('side-panel');
     if (sidePanel.classList.contains('open')) {
         sidePanel.classList.remove('open');
