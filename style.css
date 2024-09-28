@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+}
+
+header {
+    background: #ebd5bad0;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(49, 55, 100);
+    padding: 10px 20px;
+    /* Add some side padding */
+    display: flex;
+    /* Enable flexbox for horizontal layout */
+    justify-content: space-between;
+    /* Space between the h1 and the nav */
+    align-items: center;
+    /* Vertically center align items */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.side-panel {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgba(49, 55, 100);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+    /* Adjust font size as necessary */
+}
+
+#home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: opacity 0.5s ease;
+    /* Smooth transition effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* Initially hidden */
+}
+
+.slides img.active {
+    display: block;
+    /* Only show the active slide */
+    opacity: 1;
+    /* Make it visible */
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.h2 {
+    font-family: "Spicy Rice", serif;
+    font-size: 1.8rem;
+    color: rgb(225, 187, 130);
+    /* align-self: center; */
+    text-align: center;
+}
+
+#pets {
+    padding: 50px 20px;
+}
+
+#pets .pet-profile {
+    font-family: "Spicy Rice", serif;
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+    text-align: center;
+    background-color: rgba(216, 197, 197, 0.482);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#pets img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.petimg {
+    height: 200px;
+    width: 100px;
+}
+.pro{
+    font-family: "Spicy Rice", serif;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: white;
+    color: #000000;
+    border-radius:10px ;
+}
+
+form {
+    font-family: "Spicy Rice", serif;
+    background-color: rgba(216, 197, 197, 0.482);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.con {
+    margin-top: 20px;
+}
+
+.cnt {
+    font-family: "Spicy Rice", serif;
+    color: #000000;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: rgba(216, 197, 197, 0.482);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cnt a {
+    font-family: "Spicy Rice", serif;
+    text-decoration: none;
+    color: black;
+}
+
+/* FAQ Section Styling */
+#support {
+    padding: 40px;
+}
+
+.faq {
+    background-color: rgba(216, 197, 197, 0.482); 
+    max-width: 800px; 
+    margin: auto; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.faq h3 {
+    font-family: "Spicy Rice", serif; 
+    font-size: 24px; 
+    margin-bottom: 20px; 
+    color: rgb(2, 2, 4); 
+}
+
+.faq ul {
+    list-style: none; 
+    padding: 0; 
+}
+
+.faq li {
+    margin-bottom: 15px; 
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 10px;
+}
+
+.faq li:last-child {
+    border-bottom: none; 
+}
+
+.faq strong {
+    color: rgb(0, 0, 0); 
+    font-weight: bold; 
+}
+
+.faq p {
+    margin: 5px 0 0; 
+    font-size: 16px; 
+    color: #000000; 
+}
+
+.foot{
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Add these styles to your style.css */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start slightly below */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    /* Transition effects */
+}
+
+.reveal.active {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Reset position */
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the regular menu */
+      }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* Side panel styles for small screens */
+    .side-panel {
+        display: block;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: beige;
+        overflow-x: hidden;
+        transition: 0.5s;
+        z-index: 11;
+        padding-top: 60px;
+    }
+
+    .side-panel ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    .side-panel ul li {
+        padding: 8px 8px;
+    }
+
+    .side-panel ul li a {
+        font-family: "Concert One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+        color: rgb(49, 55, 100);
+        text-decoration: none;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .side-panel ul li a:hover {
+        color: #f1f1f1;
+    }
+
+    .side-panel.open {
+        width: 250px;
+    }
+}
